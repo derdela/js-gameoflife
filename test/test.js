@@ -1,9 +1,10 @@
 const
   expect = require('chai').expect,
-  app = require(__dirname + '../src/app.js');
+  app = require(__dirname + '/../src/app.js');
 
-describe('some context', function() {
-  it('should fail', function() {
-    expect(true).to.be.false;
+describe('livingCellWithNoBros', function() {
+  it('dies', function() {
+  	const noBros = [[false, false, false], [false, true, false], [false, false, false]];
+    expect(app.isAlive(noBros, 1, 1)).to.be.false;
   });
 });

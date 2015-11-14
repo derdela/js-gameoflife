@@ -1,16 +1,17 @@
 module.exports = {
 	isAlive: function(grid, x, y) {
-		rows = grid.map(function(row) {
-			return row.reduce(function(sum, x) {
-				return x ? sum + 1 : sum;
-			}, 0)
-		})
-		var broCount = rows.reduce(function(sum, x) {
-			return x ? sum + 1 : sum;
-		}, 0)
+		var broCount = 0;
+		for(var offx = -1; offx <= 1; offx++) {
+			for(var offy = -1; offy <= 1; offy++) {
+				if(grid[x + offx][y + offy]) {
+					broCount++;
+				}
+			}
+		}
 
 		broCount = grid[x, y] ? broCount - 1 : broCount;
 
-		return !(broCount < 2);
+		console.log(broCount);
+		return !(broCount < 2) || (broCount === 2 || broCount === 3);
 	}
 };

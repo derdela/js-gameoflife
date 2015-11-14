@@ -8,3 +8,11 @@ describe('livingCellWithNoBros', function() {
     expect(app.isAlive(noBros, 1, 1)).to.be.false;
   });
 });
+
+
+describe('livingCellWithNoBros', function() {
+  it('dies', function() {
+  	const noBros = [[false, false, false], [true, true, true], [false, false, false]];
+    expect(app.isAlive(noBros, 1, 1)).to.be.true;
+  });
+});
